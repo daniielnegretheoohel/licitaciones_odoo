@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_meta_personal_list" model="ir.ui.view">
-        <field name="name">meta.personal.list</field>
-        <field name="model">meta.personal</field>
-        <field name="type">list</field>
+
+    <record id="alya_meta_personal_view_list" model="ir.ui.view">
+        <field name="name">alya.meta.personal.view.list</field>
+        <field name="model">alya.meta.personal</field>
         <field name="arch" type="xml">
             <list string="Metas Personales"
                   decoration-success="estado == 'completado'"
@@ -29,9 +29,9 @@
         </field>
     </record>
 
-    <record id="view_metas_personales_form" model="ir.ui.view">
-        <field name="name">meta.personal.form</field>
-        <field name="model">meta.personal</field>
+    <record id="alya_meta_personal_view_form" model="ir.ui.view">
+        <field name="name">alya.meta.personal.view.form</field>
+        <field name="model">alya.meta.personal</field>
         <field name="arch" type="xml">
             <form string="Meta Personal">
 
@@ -86,7 +86,6 @@
 
                 <sheet>
 
-                    <!-- Título -->
                     <div class="oe_title">
                         <label for="nombre" string="Nombre de la Meta"/>
                         <h1>
@@ -94,7 +93,6 @@
                         </h1>
                     </div>
 
-                    <!-- Grupo principal -->
                     <group>
                         <group>
                             <field name="categoria"/>
@@ -123,7 +121,6 @@
                         </group>
                     </group>
 
-                    <!-- Notebook con pestañas -->
                     <notebook>
 
                         <page string="Descripción">
@@ -136,13 +133,11 @@
                                 <list editable="bottom">
                                     <field name="tipo_recomendacion"/>
                                     <field name="descripcion"/>
-                                    <field name="descripcion"/>
                                 </list>
 
                                 <form>
                                     <group>
                                         <field name="tipo_recomendacion"/>
-                                        <field name="descripcion"/>
                                         <field name="descripcion"/>
                                     </group>
                                 </form>
@@ -177,10 +172,10 @@
         </field>
     </record>
 
-    <record id="action_metas_personales" model="ir.actions.act_window">
+    <record id="alya_metas_personales_action" model="ir.actions.act_window">
         <field name="name">Metas Personales</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">meta.personal</field>
+        <field name="res_model">alya.meta.personal</field>
         <field name="view_mode">list,form</field>
     </record>
+
 </odoo>

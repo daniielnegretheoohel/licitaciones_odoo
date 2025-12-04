@@ -1,10 +1,14 @@
-from odoo import models, fields, api
+from odoo import api, fields, models
+
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    # 1 contacto → muchas metas
-    meta_ids = fields.One2many("meta.personal", "partner_id", string="Metas personales",)
+    meta_ids = fields.One2many(
+        "meta.personal",
+        "partner_id",
+        string="Metas personales",
+    )
 
     meta_count = fields.Integer(
         string="Cantidad de metas",

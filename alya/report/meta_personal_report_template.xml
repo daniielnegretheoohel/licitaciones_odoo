@@ -1,90 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <data>
 
-    <template id="meta_personal_report_template">
-        <t t-call="web.html_container">
-            <t t-call="web.external_layout">
+        <template id="alya_meta_personal_report_template" name="alya.meta.personal.report.template">
 
-                <!-- Odoo pasa 'docs', no 'doc' -->
-                <t t-set="o" t-value="docs"/>
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
 
-                <div class="page">
+                    <t t-set="o" t-value="docs"/>
 
-                    <h2 style="text-align:center;">Reporte de Meta Personal</h2>
-                    <hr/>
+                    <div class="page">
 
-                    <h3>
-                        <strong>Nombre:</strong>
-                        <t t-esc="o.nombre"/>
-                    </h3>
+                        <h2 style="text-align:center;">Reporte de Meta Personal</h2>
+                        <hr/>
 
-                    <p>
-                        <strong>Categoría:</strong>
-                        <!-- SELECTION: mostrar etiqueta bonita -->
-                        <t t-esc="o._fields['categoria'].convert_to_export(o.categoria, o)"/>
-                    </p>
+                        <h3>
+                            <strong>Nombre:</strong>
+                            <t t-esc="o.nombre"/>
+                        </h3>
 
-                    <p>
-                        <strong>Estado:</strong>
-                        <t t-esc="o.estado"/>
-                    </p>
+                        <p>
+                            <strong>Categoría:</strong>
+                            <t t-esc="o._fields['categoria'].convert_to_export(o.categoria, o)"/>
+                        </p>
 
-                    <p>
-                        <strong>Fecha límite:</strong>
-                        <t t-esc="o.fecha_limite"/>
-                    </p>
+                        <p>
+                            <strong>Estado:</strong>
+                            <t t-esc="o.estado"/>
+                        </p>
 
-                    <p>
-                        <strong>Días restantes:</strong>
-                        <t t-esc="o.dias_restantes"/>
-                    </p>
+                        <p>
+                            <strong>Fecha límite:</strong>
+                            <t t-esc="o.fecha_limite"/>
+                        </p>
 
-                    <!-- Descripción -->
-                    <h3>Descripción</h3>
-                    <p><t t-raw="o.descripcion"/></p>
+                        <p>
+                            <strong>Días restantes:</strong>
+                            <t t-esc="o.dias_restantes"/>
+                        </p>
 
-                    <br/>
+                        <h3>Descripción</h3>
+                        <p><t t-raw="o.descripcion"/></p>
 
-                    <!-- Actividades -->
-                    <h3>Actividades</h3>
-                    <table class="table table-sm">
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Tipo</th>
-                        </tr>
+                        <br/>
 
-                        <t t-foreach="o.actividad_ids" t-as="act">
-                            <tr>
-                                <td><t t-esc="act.fecha"/></td>
-                                <td>
-                                    <t t-esc="act._fields['tipo_actividad'].convert_to_export(act.tipo_actividad, act)"/>
-                                </td>
-                            </tr>
-                        </t>
-                    </table>
 
-                    <br/>
+                        <h3>Actividades</h3>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
 
-                    <!-- Recomendaciones -->
-                    <h3>Recomendaciones</h3>
-                    <table class="table table-sm">
-                        <tr>
-                            <th>Tipo</th>
-                        </tr>
+                            <tbody>
+                                <t t-foreach="o.actividad_ids" t-as="act">
+                                    <tr>
+                                        <td><t t-esc="act.fecha"/></td>
+                                        <td>
+                                            <t t-esc="act._fields['tipo_actividad'].convert_to_export(act.tipo_actividad, act)"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
 
-                        <t t-foreach="o.recomendacion_ids" t-as="rec">
-                            <tr>
-                                <td>
-                                    <t t-esc="rec._fields['tipo_recomendacion'].convert_to_export(rec.tipo_recomendacion, rec)"/>
-                                </td>
-                            </tr>
-                        </t>
-                    </table>
+                        <br/>
 
-                </div>
+                        <h3>Recomendaciones</h3>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
 
+                            <tbody>
+                                <t t-foreach="o.recomendacion_ids" t-as="rec">
+                                    <tr>
+                                        <td>
+                                            <t t-esc="rec._fields['tipo_recomendacion'].convert_to_export(rec.tipo_recomendacion, rec)"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </t>
             </t>
-        </t>
-    </template>
 
+        </template>
+
+    </data>
 </odoo>

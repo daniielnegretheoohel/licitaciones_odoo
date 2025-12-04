@@ -1,44 +1,50 @@
 {
     'name': 'Asistente de Desarrollo Personal',
     'version': '1.0.0',
-    'category': 'Desarrollo Personal',
     'summary': 'Módulo inteligente para seguimiento de metas y desarrollo personal',
+    'author': 'Oohel Technologies S.A. de C.V.',
+    'maintainer': 'Geovani Daniel Nolasco Negrete <geovani.negrete@oohel.net>',
+    'contributors': [
+        'Gio <geovani.negrete@oohel.net>',
+    ],
+    'category': 'Productivity/Personal Development',
     'description': """
-    Módulo avanzado para gestión de metas personales
-    - Seguimiento de progreso
-    - Recomendaciones inteligentes
-    - Análisis de desarrollo personal
+        Módulo para la gestión y seguimiento de metas personales.
+
+        Funcionalidades:
+        - Seguimiento de progreso de metas
+        - Recomendaciones inteligentes basadas en actividad
+        - Registro de actividades realizadas
+        - Integración con contactos (res.partner)
+        - Reportes PDF personalizados
     """,
-    'author': 'Oohel',
     'website': 'https://github.com/tu-usuario',
+
     'depends': [
         'base',
         'mail',
-        "contacts",
-        'web'
+        'contacts',
+        'web',
     ],
+
     'data': [
-        'security/grupos_seguridad.xml',
-        'security/ir.model.access.csv',
-        'report/meta_personal_report.xml',
-        'report/meta_personal_report_template.xml',
-        'views/partner_inherit_views.xml',
-        'views/metas_personales_views.xml',
-        'views/recomendaciones_inteligentes_views.xml',
-        'views/seguimiento_actividades_views.xml',
-        'views/menu_principal.xml',
+        'security/alya_groups.xml',
+        'security/ir.model.access.csv.csv',
 
+        # REPORTES
+        'report/meta_personal/meta_personal_report.xml',
+        'report/meta_personal/meta_personal_templates.xml',
 
+        # VISTAS
+        'views/res_partner_views.xml',
+        'views/alya_metas_personales_views.xml',
+        'views/alya_recomendaciones_inteligentes_views.xml',
+        'views/alya_seguimiento_actividades_views.xml',
+        'views/alya_menus.xml',
     ],
 
-    # No cargar archivos inexistentes
-    # 'views/etiquetas_metas_views.xml',
-    # 'data/datos_iniciales.xml',
-
-    'demo': [
-        # 'demo/demo_data.xml'
-    ],
-    'application': True,
+    'demo': [],
     'installable': True,
+    'application': True,
     'auto_install': False,
 }

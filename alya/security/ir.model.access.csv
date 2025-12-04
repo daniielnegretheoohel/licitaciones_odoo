@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_meta_personal_user,access_meta_personal_user,model_meta_personal,base.group_user,1,1,1,0
-access_meta_personal_manager,access_meta_personal_manager,model_meta_personal,base.group_system,1,1,1,1
-access_etiqueta_meta_personal_user,access_etiqueta_meta_personal_user,model_etiqueta_meta_personal,base.group_user,1,1,1,0
-access_recomendacion_inteligente_user,access_recomendacion_inteligente_user,model_recomendacion_inteligente,base.group_user,1,1,1,0
-access_seguimiento_actividad_user,access_seguimiento_actividad_user,model_seguimiento_actividad,base.group_user,1,1,1,0
+alya_access_meta_personal_user,Acceso usuario metas personales,model_alya_meta_personal,base.group_user,1,1,1,0
+alya_access_meta_personal_manager,Acceso administrador metas personales,model_alya_meta_personal,base.group_system,1,1,1,1
+alya_access_etiqueta_meta_personal_user,Acceso usuario etiquetas de metas,model_alya_etiqueta_meta_personal,base.group_user,1,1,1,0
+alya_access_recomendacion_inteligente_user,Acceso usuario recomendaciones inteligentes,model_alya_recomendacion_inteligente,base.group_user,1,1,1,0
+alya_access_seguimiento_actividad_user,Acceso usuario actividades,model_alya_seguimiento_actividad,base.group_user,1,1,1,0

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="view_partner_form_inherit_metas" model="ir.ui.view">
-        <field name="name">res.partner.form.metas</field>
+    <record id="res_partner_view_form_inherit_metas" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.metas</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
 
-            <!-- Insertar Page dentro del notebook -->
             <xpath expr="//form/sheet/notebook" position="inside">
 
-                <page string="Metas personales">
+                <page string="Metas Personales">
                     <field name="meta_ids"
-                           context="{'form_view_ref': 'alya.view_meta_personal_form'}">
+                           context="{'form_view_ref': 'alya.alya_meta_personal_view_form'}">
 
                         <list>
                             <field name="nombre"/>
