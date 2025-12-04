@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_meta_personal_report" model="ir.actions.report">
+        <field name="name">Reporte Meta Personal</field>
+        <field name="model">meta.personal</field>
+        <field name="report_type">qweb-pdf</field>
+
+        <!-- ESTE NOMBRE DEBE COINCIDIR EXACTAMENTE CON EL TEMPLATE -->
+        <field name="report_name">alya.meta_personal_report_template</field>
+        <field name="report_file">alya.meta_personal_report_template</field>
+
+        <!-- Nombre dinámico del PDF -->
+        <field name="print_report_name">'Meta - %s' % (object.nombre)</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_recomendaciones_list" model="ir.ui.view">
+        <field name="name">recomendacion.inteligente.list</field>
+        <field name="model">recomendacion.inteligente</field>
+        <field name="arch" type="xml">
+            <list string="Recomendaciones Inteligentes" editable="bottom">
+                    <field name="meta_id" invisible="1"/>
+                <field name="fecha"/>
+                <field name="tipo_recomendacion"/>
+                <field name="descripcion"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_recomendaciones_form" model="ir.ui.view">
+        <field name="name">recomendacion.inteligente.form</field>
+        <field name="model">recomendacion.inteligente</field>
+        <field name="arch" type="xml">
+            <form string="Recomendación Inteligente">
+                <sheet>
+                    <group>
+                        <field name="fecha"/>
+                        <field name="tipo_recomendacion"/>
+                        <field name="descripcion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_recomendaciones_inteligentes" model="ir.actions.act_window">
+        <field name="name">Recomendaciones Inteligentes</field>
+        <field name="res_model">recomendacion.inteligente</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>
